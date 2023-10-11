@@ -1,0 +1,8 @@
+<p>todo-list-item works!</p>
+<div *ngFor="let item of data; let i = index">
+  <h2>{{ i + 1 }} - {{ item.content }}</h2>
+  <thy-switch
+    [(ngModel)]="item.done"
+    (ngModelChange)="switchChange()"
+  ></thy-switch>
+</div>

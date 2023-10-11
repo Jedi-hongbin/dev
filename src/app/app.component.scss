@@ -1,0 +1,19 @@
+// @use 'variables.scss' as variables2;
+
+.body {
+    min-height: 300px;
+}
+
+.demo-layout {
+    min-height: 300px;
+}
+
+:host {
+    > :not(:first-child).thy-layout {
+        margin-top: 16px;
+    }
+
+    .thy-layout-content {
+        background:   #e4e9f2;
+    }
+}
