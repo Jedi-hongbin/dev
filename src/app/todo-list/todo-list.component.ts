@@ -7,11 +7,13 @@ import {
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { TToDoList } from './todo-list';
+import { ToDoListService } from './todo-list-server';
 
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.scss'],
+  providers: [ToDoListService],
 })
 export class TodoListComponent implements OnInit, OnChanges {
   title = 'TODO LIST';
