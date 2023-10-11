@@ -22,9 +22,11 @@ export class TodoListComponent implements OnInit, OnChanges {
 
   public value = 'place';
 
-  constructor() {}
+  constructor(private server: ToDoListService) {}
 
-  add() {}
+  add() {
+    this.server.add({ content: this.value });
+  }
 
   old() {
     const arr = ['todo-list'];
