@@ -1,0 +1,63 @@
+<form thyForm name="demoForm" class="m-5" #demoForm="thyForm">
+    <thy-form-group
+        thyLabelText="Username"
+        thyLabelRequired
+        thyTips="This is tips for username"
+    >
+        <input
+            thyInput
+            name="username"
+            [(ngModel)]="model.name"
+            required
+            placeholder="Please type username"
+        />
+    </thy-form-group>
+    <thy-form-group
+        thyLabelText="Password"
+        thyLabelRequired
+        thyTips="This is tips for password"
+        thyTipsMode="label"
+    >
+        <input
+            thyInput
+            type="password"
+            name="password"
+            [(ngModel)]="model.password"
+            required
+            placeholder="Please type password"
+        />
+    </thy-form-group>
+    <thy-form-group
+        thyLabelText="Role"
+        thyLabelRequired
+        thyTips="This is tips for role"
+        thyTipsMode="label"
+    >
+        <thy-custom-select
+            name="role"
+            ngModel="role"
+            [required]="true"
+            thyMode="multiple"
+            thyPlaceHolder="设置权限"
+            [(ngModel)]="selectListOfOption"
+            [thyShowSearch]="true"
+        >
+            <thy-option
+                *ngFor="let option of listOfOption | async; let i = index"
+                [thyValue]="option._id"
+                [thyLabelText]="option.desc"
+            >
+            </thy-option>
+        </thy-custom-select>
+    </thy-form-group>
+    <thy-form-group-footer>
+        <button
+            thyButton="primary"
+            [thyLoading]="saving"
+            thyLoadingText="Login"
+            (thyFormSubmit)="create()"
+        >
+            Create
+        </button>
+    </thy-form-group-footer>
+</form>

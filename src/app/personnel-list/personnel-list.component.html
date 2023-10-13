@@ -1,0 +1,21 @@
+<div class="selection-list-wrapper" #body>
+    <thy-selection-list
+        [style.background]="'#fafafa'"
+        [(ngModel)]="selectionModel.selectedValues"
+        thyLayout="grid"
+        (thySelectionChange)="selectionChange($event)"
+    >
+        <thy-list-option
+            *ngFor="let item of personnelServe.list"
+            [thyValue]="item._id"
+        >
+            <thy-icon
+                thyIconName="user-role"
+                class="thy-grid-option-icon"
+            ></thy-icon>
+            <div class="thy-grid-option-name">
+                <h4>{{ item.name }}</h4>
+            </div>
+        </thy-list-option>
+    </thy-selection-list>
+</div>
