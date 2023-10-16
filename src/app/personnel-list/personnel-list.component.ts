@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { ThySelectionListChange } from "ngx-tethys/list";
 import { ApiService } from "../server/ApiServe";
 import { PersonnelServe } from "../server/PersonnelServe";
@@ -11,13 +11,9 @@ import { PersonnelServe } from "../server/PersonnelServe";
 export class PersonnelListComponent {
     public isGridLayout = true;
 
-    public selectionModel = {
-        selectedValues: [],
-    };
+    @Input() public selectionModel: any;
 
     constructor(public personnelServe: PersonnelServe) {}
 
-    selectionChange(event: ThySelectionListChange | any) {
-        console.log(event);
-    }
+    selectionChange(event: ThySelectionListChange | any) {}
 }

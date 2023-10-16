@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ApiService } from "../server/ApiServe";
 import { PersonnelServe } from "../server/PersonnelServe";
-import { Subject, from, tap } from "rxjs";
+import { Subject, from, merge, of, tap } from "rxjs";
 
 @Component({
     selector: "app-add-personnel",
@@ -28,18 +28,25 @@ export class AddPersonnelComponent implements OnInit {
         if (this.saving) {
             return;
         }
-        console.log(this.model, this.selectListOfOption);
         this.saving = true;
         this.apiServe.Personnel.insert({
             ...this.model,
             roleIds: this.selectListOfOption,
         }).subscribe({
             next: (d) => {
-                console.log(d);
                 this.saving = false;
-                console.log(this.personnelServe.list);
-                this.personnelServe.list = [...this.personnelServe.list, d];
-                console.log(this.personnelServe.list);
+                // this.personnelServe.list = [...this.personnelServe.list, d];
+
+                // 使用新的Observable
+                // this.personnelServe.list = merge(
+                //     this.personnelServe.list,
+                //     of([d])
+                // );
+
+                this.personnelServe.list = merge(
+                    this.personnelServe.list.pipe(tap()),
+                    of([d])
+                );
             },
             error: (err) => {
                 console.log("err", err);

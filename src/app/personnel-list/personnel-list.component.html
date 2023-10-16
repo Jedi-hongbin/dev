@@ -6,7 +6,7 @@
         (thySelectionChange)="selectionChange($event)"
     >
         <thy-list-option
-            *ngFor="let item of personnelServe.list"
+            *ngFor="let item of personnelServe.list | async"
             [thyValue]="item._id"
         >
             <thy-icon

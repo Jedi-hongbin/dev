@@ -2,7 +2,7 @@
  * @Author: hongbin
  * @Date: 2023-10-13 09:43:22
  * @LastEditors: hongbin
- * @LastEditTime: 2023-10-13 16:23:38
+ * @LastEditTime: 2023-10-16 09:56:40
  * @Description:
  */
 import { Injectable } from "@angular/core";
@@ -44,6 +44,14 @@ class Personnel {
     list() {
         const url = environment.baseUrl + "/user/list";
         return this.http.get<IPersonnel[]>(url);
+    }
+
+    delete(ids: string[]) {
+        const url = environment.baseUrl + "/user/delete";
+        return this.http.post<{ acknowledged: boolean; deletedCount: number }>(
+            url,
+            { ids }
+        );
     }
 }
 

@@ -2,7 +2,7 @@
  * @Author: hongbin
  * @Date: 2023-10-13 17:02:11
  * @LastEditors: hongbin
- * @LastEditTime: 2023-10-13 18:13:32
+ * @LastEditTime: 2023-10-16 09:46:11
  * @Description:
  */
 import { Injectable } from "@angular/core";
@@ -11,14 +11,14 @@ import { tap } from "rxjs";
 
 @Injectable()
 export class PersonnelServe {
-    list: IPersonnel[] = [];
+    list = this.apiService.Personnel.list();
 
     constructor(public apiService: ApiService) {
-        apiService.Personnel.list().subscribe({
-            next: (list) => {
-                this.list = list;
-            },
-        });
+        // apiService.Personnel.list().subscribe({
+        //     next: (list) => {
+        //         this.list = list;
+        //     },
+        // });
         // this.list
         //     .pipe(
         //         tap((list) => {
@@ -30,5 +30,9 @@ export class PersonnelServe {
         //     .subscribe((w) => {
         //         console.log("ww", w);
         //     });
+    }
+
+    delete(ids: string[]) {
+        return this.apiService.Personnel.delete(ids);
     }
 }
