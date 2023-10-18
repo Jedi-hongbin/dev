@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OldTodoComponent } from './old-todo.component';
+import { DndListComponent } from './dnd-list.component';
 
-describe('OldTodoComponent', () => {
-  let component: OldTodoComponent;
-  let fixture: ComponentFixture<OldTodoComponent>;
+describe('DndListComponent', () => {
+  let component: DndListComponent;
+  let fixture: ComponentFixture<DndListComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [OldTodoComponent]
+      declarations: [DndListComponent]
     });
-    fixture = TestBed.createComponent(OldTodoComponent);
+    fixture = TestBed.createComponent(DndListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
