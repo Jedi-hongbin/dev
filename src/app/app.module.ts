@@ -29,6 +29,9 @@ import { PersonnelListComponent } from "./personnel-list/personnel-list.componen
 import { AddPersonnelComponent } from "./add-personnel/add-personnel.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { PersonnelServe } from "./server/PersonnelServe";
+import { ProjectManagerComponent } from './project-manager/project-manager.component';
+import { ProjectManagerBarComponent } from './project-manager-bar/project-manager-bar.component';
+import { ProjectManagerListComponent } from './project-manager-list/project-manager-list.component';
 
 @NgModule({
     declarations: [
@@ -42,6 +45,9 @@ import { PersonnelServe } from "./server/PersonnelServe";
         AdminComponent,
         PersonnelListComponent,
         AddPersonnelComponent,
+        ProjectManagerComponent,
+        ProjectManagerBarComponent,
+        ProjectManagerListComponent,
     ],
     imports: [
         FormsModule,

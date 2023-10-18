@@ -2,7 +2,7 @@
  * @Author: hongbin
  * @Date: 2023-10-13 09:43:22
  * @LastEditors: hongbin
- * @LastEditTime: 2023-10-16 09:56:40
+ * @LastEditTime: 2023-10-18 14:15:47
  * @Description:
  */
 import { Injectable } from "@angular/core";
@@ -55,6 +55,14 @@ class Personnel {
     }
 }
 
+interface IGraph {
+    collection: string;
+    operation: {
+        name: string;
+        params: Array<Record<string, any>>;
+    };
+}
+
 @Injectable()
 export class ApiService {
     Personnel: Personnel;
@@ -65,5 +73,10 @@ export class ApiService {
     getRoles() {
         const url = environment.baseUrl + "/role";
         return this.http.get<IRole[]>(url);
+    }
+
+    Graph<T>(graph: IGraph) {
+        const url = environment.baseUrl + "/graph";
+        return this.http.post<T>(url, graph);
     }
 }

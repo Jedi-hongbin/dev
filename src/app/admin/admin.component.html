@@ -374,7 +374,7 @@
                 <a
                     *ngFor="let item of list; let i = index"
                     thyMenuItem
-                    thyIcon="dashboard"
+                    [thyIcon]="item.data.icon"
                     [href]="'admin/' + item.path"
                 >
                     {{ item.title }}
