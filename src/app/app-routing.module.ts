@@ -8,6 +8,7 @@ import { AdminComponent } from "./admin/admin.component";
 import { PersonnelManagerComponent } from "./personnel-manager/personnel-manager.component";
 import { authGuard } from "./guard/personnel.guard";
 import { ProjectManagerComponent } from "./project-manager/project-manager.component";
+import { DragAndDropComponent } from "./drag-and-drop/drag-and-drop.component";
 
 export const routes: Routes = [
     {
@@ -52,6 +53,10 @@ export const routes: Routes = [
             },
             { path: "**", redirectTo: "project" },
         ],
+    },
+    {
+        path: "dragAndDrop",
+        component: DragAndDropComponent,
     },
     {
         path: "**",

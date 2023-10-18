@@ -29,9 +29,10 @@ import { PersonnelListComponent } from "./personnel-list/personnel-list.componen
 import { AddPersonnelComponent } from "./add-personnel/add-personnel.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { PersonnelServe } from "./server/PersonnelServe";
-import { ProjectManagerComponent } from './project-manager/project-manager.component';
-import { ProjectManagerBarComponent } from './project-manager-bar/project-manager-bar.component';
-import { ProjectManagerListComponent } from './project-manager-list/project-manager-list.component';
+import { ProjectManagerComponent } from "./project-manager/project-manager.component";
+import { ProjectManagerBarComponent } from "./project-manager-bar/project-manager-bar.component";
+import { ProjectManagerListComponent } from "./project-manager-list/project-manager-list.component";
+import { DragAndDropComponent } from "./drag-and-drop/drag-and-drop.component";
 
 @NgModule({
     declarations: [
@@ -48,6 +49,7 @@ import { ProjectManagerListComponent } from './project-manager-list/project-mana
         ProjectManagerComponent,
         ProjectManagerBarComponent,
         ProjectManagerListComponent,
+        // DragAndDropComponent,
     ],
     imports: [
         FormsModule,
